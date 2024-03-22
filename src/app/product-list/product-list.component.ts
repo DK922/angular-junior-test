@@ -8,4 +8,12 @@ import { IProduct } from '../model';
 })
 export class ProductListComponent {
   @Input() products: IProduct[] = []
+  filter(){
+    let min=15;
+    let max=50;
+    this.products = this.products.filter(product => {
+      return product.price >= min && product.price <= max;
+    })
+  }
+
 }
